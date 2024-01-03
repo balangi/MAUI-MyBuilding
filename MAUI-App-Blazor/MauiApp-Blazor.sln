@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp-Blazor", "MauiApp-Blazor\MauiApp-Blazor.csproj", "{7E01B471-A416-4511-95C3-E968DE741751}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Library", "Solution Library", "{DD419B47-59F3-4412-B732-65249DF15778}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farabeh.MyBuilding.Core.Domain", "Solution Library\Farabeh.MyBuilding.Core.Domain\Farabeh.MyBuilding.Core.Domain.csproj", "{D3A1CE71-7424-4EBA-AD2C-BED1442195B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farabeh.MyBuilding.Framework", "Solution Library\Farabeh.MyBuilding.Framework\Farabeh.MyBuilding.Framework.csproj", "{D5E3F89A-9847-48E0-9CA4-9BF0DD220BC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farabeh.MyBuilding.Infra.Data.Api", "Solution Library\Farabeh.MyBuilding.Infra.Data.Api\Farabeh.MyBuilding.Infra.Data.Api.csproj", "{3A8DF65F-E4BB-411A-99F1-B63A9F6AD46A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E01B471-A416-4511-95C3-E968DE741751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E01B471-A416-4511-95C3-E968DE741751}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E01B471-A416-4511-95C3-E968DE741751}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7E01B471-A416-4511-95C3-E968DE741751}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E01B471-A416-4511-95C3-E968DE741751}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E01B471-A416-4511-95C3-E968DE741751}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D3A1CE71-7424-4EBA-AD2C-BED1442195B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3A1CE71-7424-4EBA-AD2C-BED1442195B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3A1CE71-7424-4EBA-AD2C-BED1442195B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3A1CE71-7424-4EBA-AD2C-BED1442195B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E3F89A-9847-48E0-9CA4-9BF0DD220BC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E3F89A-9847-48E0-9CA4-9BF0DD220BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E3F89A-9847-48E0-9CA4-9BF0DD220BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E3F89A-9847-48E0-9CA4-9BF0DD220BC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A8DF65F-E4BB-411A-99F1-B63A9F6AD46A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A8DF65F-E4BB-411A-99F1-B63A9F6AD46A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A8DF65F-E4BB-411A-99F1-B63A9F6AD46A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A8DF65F-E4BB-411A-99F1-B63A9F6AD46A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D3A1CE71-7424-4EBA-AD2C-BED1442195B6} = {DD419B47-59F3-4412-B732-65249DF15778}
+		{D5E3F89A-9847-48E0-9CA4-9BF0DD220BC3} = {DD419B47-59F3-4412-B732-65249DF15778}
+		{3A8DF65F-E4BB-411A-99F1-B63A9F6AD46A} = {DD419B47-59F3-4412-B732-65249DF15778}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D98B4D1B-561F-446F-9894-B915DE0E77B7}
+	EndGlobalSection
+EndGlobal

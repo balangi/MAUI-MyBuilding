@@ -1,0 +1,103 @@
+﻿@page "/manager"
+
+@{
+    if (!haveBuilding)
+    {
+        <article id="first-page" class="first-page">
+            <div class="px-4 inner-first-page">
+                <div class="row">
+                    <div class="col-12 bg-info text-center border border-info rounded-2">
+                        <div class="text-black-50">با انتخاب + یک ساختمان را اضافه نمائید</div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <div>
+            <button class="mx-4 circle" @onclick="IncrementCount">
+                <img src="images/plus.svg" alt="" />
+            </button>
+            <ul class="menu">
+                <li class="menu-item">
+                    <NavLink href="addbuilding" class="text-decoration-none">
+                        <div class="text-black">ساختمان جدید</div>
+                    </NavLink>
+                </li>
+                <li class="menu-item">
+                    <a>تغییر مدیریت</a>
+                </li>
+            </ul>
+
+        </div>
+
+
+        <p role="status">Current count: @currentCount</p>
+    }
+    else
+    {
+        <article id="content" class="content">
+            <div class="px-4" style="overflow-y:scroll; height: 100%">
+                <div>
+                    <h1>سلام, دنیا!</h1>
+
+                    @* <div>
+            Welcome to your new app.
+            </div>
+
+            <h1>1</h1>
+
+            <div>
+            Welcome to your new app.
+            </div>
+
+            @{
+            if (Products == null)
+            {
+            <h1>loading ...</h1>
+            }
+            else
+            {
+            foreach (var product in Products)
+            {
+            <h1>@product.Name - @product.Id</h1>
+
+            <div>
+            @product.Price
+            </div>
+            }
+            }
+            }
+
+            <h1>3</h1>
+
+            <div>
+            Welcome to your new app.
+            </div>*@
+                </div>
+            </div>
+        </article>
+
+        <div class="add mx-4">
+            <img src="images/plus.svg" />
+        </div>
+
+        <div id="footer" class="footer">
+            <div class="row">
+                <div class="col-3">1</div>
+                <div class="col-3">2</div>
+                <div class="col-3">3</div>
+                <div class="col-3">4</div>
+            </div>
+        </div>
+    }
+}
+
+@code {
+    private bool haveBuilding = false;
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
