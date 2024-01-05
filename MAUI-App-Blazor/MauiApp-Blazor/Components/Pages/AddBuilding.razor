@@ -1,5 +1,4 @@
 ﻿@page "/addbuilding"
-@using MauiApp_Blazor.Database
 
 <h1>Counter</h1>
 
@@ -9,30 +8,3 @@
 <button class="btn btn-primary" @onclick="() => IncrementCount()">Click me</button>
 
 <p role="status">Current count: @currentCount</p>
-
-
-@code {
-    InputMsgModel _InputMsgModel = new InputMsgModel();
-
-    private void SubmitText()
-    {
-    }
-
-    public class InputMsgModel
-    {
-        public string Msg { get; set; } = "My new message";
-    }
-
-    private string currentCount = "";
-
-    private async void IncrementCount()
-    {
-        currentCount = _InputMsgModel.Msg;
-
-        var db = new SqliteDbContext();
-        var p = new Building { Name = _InputMsgModel.Msg };
-        await db.Create(p);
-
-        List<Building> Products = await db.GetAll();
-    }
-}

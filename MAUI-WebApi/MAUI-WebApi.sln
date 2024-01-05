@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAUI-WebApi", "MAUI-WebApi\MAUI-WebApi.csproj", "{11AF652B-4A8E-4711-8EF0-D48BFB8C7FDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAUI-WebApi", "MAUI-WebApi\MAUI-WebApi.csproj", "{11AF652B-4A8E-4711-8EF0-D48BFB8C7FDA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Library", "Solution Library", "{32B2E767-3086-4788-AFAD-26119AAF3465}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farabeh.MyBuilding.Api.Core.Domain", "Solution Library\Farabeh.MyBuilding.Api.Core.Domain\Farabeh.MyBuilding.Api.Core.Domain.csproj", "{785C189A-B3FF-4E4D-92C8-9957FE432CD4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farabeh.MyBuilding.Api.Framework", "Solution Library\Farabeh.MyBuilding.Api.Framework\Farabeh.MyBuilding.Api.Framework.csproj", "{7A6E8E35-D1CE-49C5-845C-09C3B6F1AF54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farabeh.MyBuilding.Api.Infra.Data.Sql", "Solution Library\Farabeh.MyBuilding.Api.Infra.Data.Sql\Farabeh.MyBuilding.Api.Infra.Data.Sql.csproj", "{A83459E8-8B82-4A3C-83F9-E0E041AF60C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +23,26 @@ Global
 		{11AF652B-4A8E-4711-8EF0-D48BFB8C7FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11AF652B-4A8E-4711-8EF0-D48BFB8C7FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11AF652B-4A8E-4711-8EF0-D48BFB8C7FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{785C189A-B3FF-4E4D-92C8-9957FE432CD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{785C189A-B3FF-4E4D-92C8-9957FE432CD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{785C189A-B3FF-4E4D-92C8-9957FE432CD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{785C189A-B3FF-4E4D-92C8-9957FE432CD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A6E8E35-D1CE-49C5-845C-09C3B6F1AF54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A6E8E35-D1CE-49C5-845C-09C3B6F1AF54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A6E8E35-D1CE-49C5-845C-09C3B6F1AF54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A6E8E35-D1CE-49C5-845C-09C3B6F1AF54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A83459E8-8B82-4A3C-83F9-E0E041AF60C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A83459E8-8B82-4A3C-83F9-E0E041AF60C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A83459E8-8B82-4A3C-83F9-E0E041AF60C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A83459E8-8B82-4A3C-83F9-E0E041AF60C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{785C189A-B3FF-4E4D-92C8-9957FE432CD4} = {32B2E767-3086-4788-AFAD-26119AAF3465}
+		{7A6E8E35-D1CE-49C5-845C-09C3B6F1AF54} = {32B2E767-3086-4788-AFAD-26119AAF3465}
+		{A83459E8-8B82-4A3C-83F9-E0E041AF60C6} = {32B2E767-3086-4788-AFAD-26119AAF3465}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7AF97EF6-DEE9-45E4-B307-A2EC7F06C4B0}

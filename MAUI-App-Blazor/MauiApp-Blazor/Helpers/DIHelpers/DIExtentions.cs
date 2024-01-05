@@ -1,6 +1,6 @@
-﻿using Farabeh.MyBuilding.Core.Domain.Assets.Contracts;
+﻿using Farabeh.MyBuilding.Core.Domain.Buildings.Contracts;
 using Farabeh.MyBuilding.Framework.Serializers;
-using Farabeh.MyBuilding.Infra.Data.Api.Assets;
+using Farabeh.MyBuilding.Infra.Data.Api.Buildings;
 using Microsoft.Extensions.Configuration;
 
 namespace MauiApp_Blazor.Helpers.DIHelpers;
@@ -17,6 +17,6 @@ public static class DIExtentions
 
     public static void AddHttpClients(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddHttpClient<IAssetClient, AssetClient>(option => option.BaseAddress = new System.Uri(baseAddress));
+        services.AddHttpClient<IBuildingClient, BuildingClient>(option => option.BaseAddress = new System.Uri(baseAddress));
     }
 }
