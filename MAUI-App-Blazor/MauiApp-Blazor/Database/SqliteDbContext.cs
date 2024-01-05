@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using Farabeh.MyBuilding.Core.Domain.Buildings.Dtos;
+using SQLite;
 
 namespace MauiApp_Blazor.Database;
 
@@ -10,26 +11,31 @@ public class SqliteDbContext
     public SqliteDbContext()
     {
         _connection = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, DbName));
-        _connection.CreateTableAsync<Building>();
+        _connection.CreateTableAsync<BuildingDto>();
     }
 
-    public async Task<List<Building>> GetAll()
+    public async Task<List<BuildingDto>> GetAll()
     {
-        return await _connection.Table<Building>().ToListAsync();
+        return await _connection.Table<BuildingDto>().ToListAsync();
     }
 
-    public async Task<Building> GetById(int buildingId)
+    public async Task<BuildingDto> GetById(int buildingId)
     {
-        return await _connection.Table<Building>().Where(w => w.Id == buildingId).FirstOrDefaultAsync();
+        return await _connection.Table<BuildingDto>().Where(w => w.Id == buildingId).FirstOrDefaultAsync();
     }
 
-    public async Task Create(Building building)
+    public async Task Create(BuildingDto building)
     {
         await _connection.InsertAsync(building);
     }
 
-    public async Task Update(Building building)
+    public async Task Update(BuildingDto building)
     {
         await _connection.UpdateAsync(building);
+    }
+
+    public async Task Delete(BuildingDto building)
+    {
+        await _connection.DeleteAsync(building);
     }
 }

@@ -21,16 +21,16 @@ public class BuildingController : ControllerBase
         _building = building;
     }
 
-    [HttpGet("~/api/Building/Create")]
-    public async Task<BuildingInfoDto> GetBuilding([FromQuery] string name)
+    [HttpGet("~/api/Building/GetBuildingsByCode")]
+    public async Task<BuildingInfoDto> GetBuildingsByCode([FromQuery] string code)
     {
-        var building = new BuildingDto { Name = name };
+        List<BuildingDto> buildings = null;
         var message = "";
         var isSuccess = false;
         try
         {
-            var result = await _building.Create(building);
-            message = $"Creaed with id {result}.";
+            buildings = await _building.GetBuildingsByCode(code);
+            message = "";
             isSuccess = true;
         }
         catch (Exception ex)
@@ -42,6 +42,7 @@ public class BuildingController : ControllerBase
 
         return new BuildingInfoDto
         {
+            Buildings = buildings,
             IsSuccess = isSuccess,
             Message = message
         };
@@ -50,13 +51,30 @@ public class BuildingController : ControllerBase
     [HttpPost("~/api/Building/Create")]
     public async Task<BuildingInfoDto> CreateBuilding([FromBody] BuildingInputDto buildingInput)
     {
-        var building = new BuildingDto { Name = buildingInput.Name };
+        Random rand = new Random();
+        var ranCode = rand.Next(1000000, 9999999).ToString("D6");
+
+        var codeFounded =  _building.FindByCode(ranCode);
+        
+        if (codeFounded)
+        {
+            ranCode = rand.Next(1000000, 9999999).ToString("D6");
+        }
+
+        var building = new BuildingDto
+        {
+            Name = buildingInput.Name,
+            Manager = buildingInput.Manager,
+            Mobile = buildingInput.Mobile,
+            Code = ranCode
+        };
+
         var message = "";
         var isSuccess = false;
         try
         {
             var result = await _building.Create(building);
-            message = $"Creaed with id {result}.";
+            message = ranCode.ToString();
             isSuccess = true;
         }
         catch (Exception ex)

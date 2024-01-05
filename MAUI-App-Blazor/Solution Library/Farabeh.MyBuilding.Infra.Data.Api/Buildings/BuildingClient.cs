@@ -1,6 +1,6 @@
-﻿using Farabeh.MyBuilding.Api.Core.Domain.Buildings.Dtos.Outputs;
-using Farabeh.MyBuilding.Core.Domain.Buildings.Commands;
+﻿using Farabeh.MyBuilding.Core.Domain.Buildings.Commands;
 using Farabeh.MyBuilding.Core.Domain.Buildings.Contracts;
+using Farabeh.MyBuilding.Core.Domain.Buildings.Dtos;
 using Farabeh.MyBuilding.Framework.HttpClinet;
 using Farabeh.MyBuilding.Framework.Results;
 
@@ -14,7 +14,7 @@ public class BuildingClient : BaseHttpClient, IBuildingClient //, IRefreshDataSe
 
     public async Task<Result<BuildingInfoDto>> GetBuildingById(string businessId)
     {
-        return await GetAsync<BuildingInfoDto>(BuildingRoutes.GetBuildingById + $"?name={businessId}");
+        return await GetAsync<BuildingInfoDto>(BuildingRoutes.GetBuildingsByCode + $"?name={businessId}");
     }
 
     public async Task<Result<BuildingInfoDto>> CreateBuilding(CreateBuildingCommand command)

@@ -1,12 +1,14 @@
 ﻿using Farabeh.MyBuilding.Core.Domain.Buildings.Commands;
 using Farabeh.MyBuilding.Core.Domain.Buildings.Contracts;
+using Farabeh.MyBuilding.Core.Domain.Buildings.Dtos;
 using Farabeh.MyBuilding.Framework;
+using MauiApp_Blazor.Database;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
 namespace MauiApp_Blazor.Components.Pages;
 
-public partial class AddBuilding
+public partial class BuildingAdd
 {
     InputMsgModel _InputMsgModel = new InputMsgModel();
 
@@ -25,25 +27,36 @@ public partial class AddBuilding
 
     private string currentCount = "";
 
-    private async void IncrementCount()
+    private async void BuildingAdd_OnClick()
     {
-        currentCount = _InputMsgModel.Msg;
-
-        //var db = new SqliteDbContext();
-        //var p = new Building { Name = _InputMsgModel.Msg };
-        //await db.Create(p);
-
-        //List<Building> Products = await db.GetAll();
+        currentCount = _InputMsgModel.Name;
 
         var command = new CreateBuildingCommand
         {
-            Name = _InputMsgModel.Msg
+            Name = _InputMsgModel.Name,
+            Manager = _InputMsgModel.Manager,
+            Mobile = _InputMsgModel.Mobile,
         };
 
         var result2 = await Client.CreateBuilding(command);
         if (result2.IsSuccess)
         {
-            NavigationManager.NavigateTo("/manager");
+            var db = new SqliteDbContext();
+            
+            var p = new BuildingDto
+            {
+                Name = _InputMsgModel.Name,
+                Code = result2.Value.Message
+            };
+
+            await db.Create(p);
+
+            //foreach (var building in Buildings)
+            //{
+            //    await db.Delete(building);
+            //}
+
+            NavigationManager.NavigateTo("/Building");
         }
         else
         {
@@ -54,6 +67,8 @@ public partial class AddBuilding
 
 public class InputMsgModel
 {
-    public string Msg { get; set; } = "My new message";
+    public string Name { get; set; } = "Name";
+    public string Manager { get; set; } = "Manager";
+    public string Mobile { get; set; } = "Mobile";
 }
 

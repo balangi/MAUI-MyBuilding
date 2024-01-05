@@ -1,0 +1,13 @@
+﻿@page "/BuildingAdd"
+
+<h1>افزودن ساختمان جدید</h1>
+
+<EditForm Model="@_InputMsgModel" id="inputText">
+    <InputText @bind-Value="@_InputMsgModel.Name" />
+    <InputText @bind-Value="@_InputMsgModel.Manager" />
+    <InputText @bind-Value="@_InputMsgModel.Mobile" />
+</EditForm>
+
+<button class="btn btn-primary" @onclick="() => BuildingAdd_OnClick()">
+    ثبت ساختمان
+</button>

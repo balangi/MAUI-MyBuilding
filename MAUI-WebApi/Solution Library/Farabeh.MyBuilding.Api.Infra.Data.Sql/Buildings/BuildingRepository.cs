@@ -19,22 +19,42 @@ public class BuildingRepository : IBuildingRepository
         _httpContext = httpContext;
     }
 
-    public int Count() 
+    public int Count()
     {
         return _dbContext.Buildings.Count();
     }
 
-    public List<BuildingDto> GetAll() 
+    public List<BuildingDto> GetAll()
     {
         return _dbContext.Buildings.ToList();
     }
 
-    public BuildingDto GetItem(int id) 
+    public BuildingDto GetItem(int id)
     {
         return _dbContext
             .Buildings
             .Where(w => w.Id == id)
             .FirstOrDefault();
+    }
+
+    public async Task<List<BuildingDto>> GetBuildingsByCode(string code)
+    {
+        return await _dbContext
+            .Buildings
+            .Where(w => w.Code == code)
+            .ToListAsync();
+    }
+
+    public bool FindByCode(string code)
+    {
+        var list = _dbContext
+            .Buildings
+            .Where(w => w.Code == code)
+            .ToList();
+
+        return list.Count > 0
+            ? true
+            : false;
     }
 
     public async Task<long> Create(BuildingDto data)
