@@ -1,6 +1,7 @@
 ﻿#nullable disable
 
 using Farabeh.MyBuilding.Core.Domain.Buildings.Contracts;
+using MauiApp_Blazor.Components.Layout;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
@@ -20,13 +21,11 @@ public partial class Home
     [Inject]
     public IJSRuntime JSRuntime { get; set; }
 
-
     protected async override Task OnInitializedAsync()
     {
-        MainLayoutMainTitle = 
         // var db = new SqliteDbContext();
         // Products = await db.GetAll();
-
+        
         var result = await Client.GetBuildingById("123456");
         if (result.IsSuccess)
         {

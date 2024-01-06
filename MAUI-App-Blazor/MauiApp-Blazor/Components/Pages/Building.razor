@@ -9,6 +9,8 @@
     {
         if (Buildings.Count == 0)
         {
+            <SectionContent SectionName="page-title">افزودن ساختمان</SectionContent>
+
             <article id="first-page" class="first-page">
                 <div class="px-4 inner-first-page">
                     <div class="row">
@@ -21,6 +23,8 @@
         }
         else
         {
+            <SectionContent SectionName="page-title">ساختمانهای من</SectionContent>
+
             <article id="first-page" class="first-page-buildings">
                 <div class="px-4 inner-first-page-buildings">
                     @foreach (var building in Buildings)
