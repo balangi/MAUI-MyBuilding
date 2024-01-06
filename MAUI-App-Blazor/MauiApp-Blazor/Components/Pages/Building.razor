@@ -5,7 +5,7 @@
     {
         <div>در حال بارگذاری</div>
     }
-    else 
+    else
     {
         if (Buildings.Count == 0)
         {
@@ -21,36 +21,38 @@
         }
         else
         {
-            <article id="first-page" class="first-page">
-                <div class="px-4 inner-first-page">
-                    <div class="row">
-                        @foreach (var building in Buildings)
-                        {
-                            <div class="col-12 bg-info text-center border border-info rounded-2">
-                                <span>@building.Name</span>
-                                <span>@building.Code</span>
-                            </div>
-                        }
-                    </div>
+            <article id="first-page" class="first-page-buildings">
+                <div class="px-4 inner-first-page-buildings">
+                    @foreach (var building in Buildings)
+                    {
+                        <div class="row mb-1">
+                            <NavLink href="BuildingProperty" class="text-decoration-none">
+                                <div class="col-12 bg-info text-center border border-info rounded-2">
+                                    <span>@building.Name</span>
+                                    <span>@building.Code</span>
+                                </div>
+                            </NavLink>
+                        </div>
+                    }
                 </div>
             </article>
         }
     }
     <div>
-            <button class="mx-4 circle" @onclick="IncrementCount">
-                <img src="images/plus.svg" alt="" />
-            </button>
-            <ul class="menu">
-                <li class="menu-item">
-                    <NavLink href="buildingadd" class="text-decoration-none">
-                        <div class="text-black">ساختمان جدید</div>
-                    </NavLink>
-                </li>
-                <li class="menu-item">
-                    <a>تغییر مدیریت</a>
-                </li>
-            </ul>
-        </div>
+        <button class="mx-4 circle" @onclick="IncrementCount">
+            <img src="images/plus.svg" alt="" />
+        </button>
+        <ul class="menu">
+            <li class="menu-item">
+                <NavLink href="buildingadd" class="text-decoration-none">
+                    <div class="text-black">ساختمان جدید</div>
+                </NavLink>
+            </li>
+            <li class="menu-item">
+                <a>تغییر مدیریت</a>
+            </li>
+        </ul>
+    </div>
     //}
     // else
     // {

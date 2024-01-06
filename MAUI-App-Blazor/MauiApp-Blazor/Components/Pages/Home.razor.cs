@@ -1,8 +1,6 @@
 ﻿#nullable disable
 
-using Farabeh.MyBuilding.Core.Domain.Buildings.Commands;
 using Farabeh.MyBuilding.Core.Domain.Buildings.Contracts;
-using Farabeh.MyBuilding.Framework;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
@@ -25,6 +23,7 @@ public partial class Home
 
     protected async override Task OnInitializedAsync()
     {
+        MainLayoutMainTitle = 
         // var db = new SqliteDbContext();
         // Products = await db.GetAll();
 
