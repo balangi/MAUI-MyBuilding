@@ -1,4 +1,5 @@
 ﻿@page "/BuildingProperty"
+@page "/BuildingProperty/{CustomerId}"
 
 <SectionContent SectionName="page-title">ساختمان یک</SectionContent>
 
@@ -27,6 +28,8 @@
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
+    [Parameter]
+    public string CustomerId { get; set; }
     private int currentCount = 0;
 
     private void IncrementCount()

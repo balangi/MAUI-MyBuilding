@@ -14,6 +14,11 @@ public partial class Building
         Buildings = await db.GetAll();
     }
 
+    private string LinkBuilder(string _route, string _parameter)
+    {
+        return _route + _parameter;
+    }
+
     private void IncrementCount()
     {
         currentCount++;
